@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Awesome Web page Design- yahya nebgui</title>
+         <link rel="stylesheet" href="dynamic.css">
+</head>
+<body>
+     <div id="hero">
+         <div class="navbar">
+            <img src="Radiance_img/logo.png" class="logo" alt="logo">
+            <div class="user">
+                <button type="button">Explore</button>
+                <img src="Radiance_img/user.png" alt="user">
+            </div>
+         </div>
+           <div class="container">
+            <div class="info">
+                <h1>DISCOVER</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br> Magnam fugiat nostrum quasi aperiam unde ad quam. Corrupti ullam iste debitis repellat! Sint qui, enim</p>
+                <input type="text" placeholder="search">
+            </div>
+           </div>
+           <div class="slider">
+            <img src="Radiance_img/left-arrow.png" id="prev">
+            <div class="preview">
+                <img src="Radiance_img/small1.png" class="active thumbnail">
+                <img src="Radiance_img/small2.png" class="thumbnail">
+                <img src="Radiance_img/small3.png" class="thumbnail">
+                <img src="Radiance_img/small4.png" class="thumbnail">
+                <img src="Radiance_img/small5.png" class="thumbnail">
+            </div>
+            <img src="Radiance_img/right-arrow.png" id="next">
+           </div>
+     </div>
+
+
+<script>
+    var prev = document.getElementById("prev");
+    var next = document.getElementById("next");
+    var thumbnail = document.getElementsByClassName("thumbnail");
+    var hero = document.getElementById("hero");
+
+    var backgroundImg = new Array(
+      "Radiance_img/bg1.png",
+      "Radiance_img/bg2.png",
+      "Radiance_img/bg3.png",
+      "Radiance_img/bg4.png",
+      "Radiance_img/bg5.png",
+    );
+    let i = 0;
+    next.onclick = function(){
+        if (i < 4) {
+            hero.style.backgroundImage = 'url("'+backgroundImg[i+1]+'")';
+            thumbnail[i+1].classList.add("active");
+            thumbnail[i].classList.remove("active");
+           i++;
+        }
+      
+    }
+    prev.onclick = function(){
+        if (i > 0) {
+            hero.style.backgroundImage = 'url("'+backgroundImg[i-1]+'")';
+            thumbnail[i-1].classList.add("active");
+            thumbnail[i].classList.remove("active");
+           i--;
+        }
+      
+    };
+   
+
+
+
+</script>
+</body>
+</html>
